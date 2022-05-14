@@ -1,20 +1,18 @@
 const { Schema, model } = require('mongoose')
 
-const ProductSchema = new Schema(
+const AuthorSchema = new Schema(
    {
-      title: {
+      name: {
          type: String,
          required: true,
          trim: true,
+         minlength: 3,
       },
-      price: {
-         type: Number,
-         required: true,
-      },
-      desc: {
+      quote: {
          type: String,
          required: true,
          trim: true,
+         minlength: 3,
       },
    },
    {
@@ -23,4 +21,4 @@ const ProductSchema = new Schema(
    }
 )
 
-module.exports = model('Product', ProductSchema, 'Products')
+module.exports = model('Author', AuthorSchema, 'Authors')
