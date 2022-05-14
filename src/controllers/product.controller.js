@@ -44,6 +44,7 @@ exports.createProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
    try {
       const isValidId = validateObjectId(req.query.productId)
+
       if (!isValidId)
          return res.status(400).json({ message: 'La ID es inválida' })
 
