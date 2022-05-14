@@ -25,7 +25,7 @@ exports.getProductById = async (req, res) => {
       res.json(product)
    } catch (error) {
       console.log(error)
-      res.status(500).json(error)
+      res.status(500).json({ message: 'Ocurrio un error con el servidor' })
    }
 }
 
