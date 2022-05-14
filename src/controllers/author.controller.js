@@ -3,7 +3,7 @@ const { validateObjectId } = require('../utils/validateObjectId')
 
 exports.getAllAuthors = async (req, res) => {
    try {
-      const authors = await Author.find()
+      const authors = await Author.find().sort({ name: 1 })
       res.status(200).json(authors)
    } catch (error) {
       console.log(error)
